@@ -16,21 +16,21 @@ pot_output(){
 #: \1:\2\
 msgid "\5\8"\
 msgstr ""\
-/'
+/' || true
 	test $argc = 1 && {
 		file_escape="$(echo -n $* | sed 's/[/\\]/\\\0/g')"
 		grep -n -- '--description' $* | sed 's/^\([0-9]*\):.*--description \(\("\(\([^\"]\|\\.\)*\)"\)\|\('"'\\(\\([^\\']\\|\\(\\\\.\\)\\)*\\)'"'\)\).*$/\
 #: '"$file_escape"':\1\
 msgid "\4\7"\
 msgstr ""\
-/'
+/' || true
 	}
 	test $argc = 0 && \
 	grep -n -- '--description' | sed 's/^\([0-9]*\):.*--description \(\("\(\([^\"]\|\\.\)*\)"\)\|\('"'\\(\\([^\\']\\|\\(\\\\.\\)\\)*\\)'"'\)\).*$/\
 #: stdin:\1\
 msgid "\4\7"\
 msgstr ""\
-/'
+/' || true
 
 }
 
