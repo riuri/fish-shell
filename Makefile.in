@@ -406,7 +406,7 @@ doc.h: $(HDR_FILES)
 messages.pot: *.cpp *.h share/completions/*.fish share/functions/*.fish
 	if test "$(HAVE_GETTEXT)" = 1; then \
 		xgettext -k_ -kN_ *.cpp *.h -o messages.pot; \
-		if ./fish_xgettext.sh share/completions/*.fish share/functions/*.fish >> messages.pot; then true; else \
+		if ./fish_xgettext.sh; then true; else \
 			echo "Something wrong went while parsing fish function definitions for translation"; \
 			rm messages.pot; \
 			false; \
